@@ -74,10 +74,10 @@ class SfpUtil(SfpUtilBase):
 
         try:
             output = subprocess.check_output(lpm_cmd, shell=True)
-            if 'LMP ON' in output:
+            if 'LPM ON' in output:
                 return True
         except subprocess.CalledProcessError as e:
-            print "Error! Unable to get LMP for {}, rc = {}, err msg: {}".format(port_num, e.returncode, e.output)
+            print "Error! Unable to get LPM for {}, rc = {}, err msg: {}".format(port_num, e.returncode, e.output)
             return False
 
         return False
@@ -94,7 +94,7 @@ class SfpUtil(SfpUtilBase):
             subprocess.check_output(lpm_cmd, shell=True)
             return True
         except subprocess.CalledProcessError as e:
-            print "Error! Unable to set LMP for {}, rc = {}, err msg: {}".format(port_num, e.returncode, e.output)
+            print "Error! Unable to set LPM for {}, rc = {}, err msg: {}".format(port_num, e.returncode, e.output)
             return False
 
         return False
@@ -110,7 +110,7 @@ class SfpUtil(SfpUtilBase):
             subprocess.check_output(lpm_cmd, shell=True)
             return True
         except subprocess.CalledProcessError as e:
-            print "Error! Unable to set LMP for {}, rc = {}, err msg: {}".format(port_num, e.returncode, e.output)
+            print "Error! Unable to set LPM for {}, rc = {}, err msg: {}".format(port_num, e.returncode, e.output)
             return False
 
         return False

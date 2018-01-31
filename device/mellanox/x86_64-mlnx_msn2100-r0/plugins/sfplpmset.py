@@ -24,11 +24,6 @@ def get_log_ports(handle, sfp_module):
     return log_port_list
 
 def set_sfp_admin_status(handle, meta, sfp_module, sfp_log_port_list, admin_status):
-    # Set admin status for all log_port of sfp
-    for log_port in sfp_log_port_list:
-        rc = sx_api_port_state_set(handle, log_port, admin_status)
-        assert rc == SX_STATUS_SUCCESS, "sx_api_port_state_set failed, rc = %d" % rc
-
     # Get PMAOS
     pmaos = ku_pmaos_reg()
     pmaos.module = sfp_module
